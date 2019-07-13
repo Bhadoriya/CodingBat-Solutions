@@ -1,2 +1,0 @@
-# CodingBat-Solutions
-CodingBat Solutions
