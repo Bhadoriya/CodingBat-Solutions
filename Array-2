@@ -9,3 +9,96 @@ public boolean tripleUp(int[] nums) {
   }
   return false;
 }
+
+
+
+####Given start and end numbers, return a new array containing the sequence of integers from start up to but not including end, 
+so start=5 and end=10 yields {5, 6, 7, 8, 9}. The end number will be greater or equal to the start number.
+Note that a length-0 array is valid. (See also: FizzBuzz Code)
+
+public int[] fizzArray3(int start, int end) {
+  int [] nums=new int[end-start];
+  
+  for(int i=0; i<end-start; i++)
+  {
+    nums[i]= start+i;
+  }
+  return nums;
+}
+
+
+#####
+Return an array that is "left shifted" by one -- so {6, 2, 5, 3} returns {2, 5, 3, 6}. 
+You may modify and return the given array, or return a new array.
+
+
+
+public int[] shiftLeft(int[] nums) {
+  int n= nums.length;
+  int swap=0;
+  for(int i=0; i<n-1; i++)
+  {
+    swap=nums[i];
+    nums[i]=nums[i+1];
+    nums[i+1]= swap;
+  }
+  return nums;
+}
+
+
+#####For each multiple of 10 in the given array, change all the values following it to be that multiple of 10,
+until encountering another multiple of 10. So {2, 10, 3, 4, 20, 5} yields {2, 10, 10, 10, 20, 20}.
+
+
+
+
+public int[] tenRun(int[] nums) {
+  int n= nums.length;
+  int len=0;
+  for(int i=0; i<n-1; i++)
+  {
+    len= i;
+    if(nums[len]%10!=0)
+    ;
+    else
+    {
+      i++;
+    while(nums[i]%10!=0)
+    {
+      nums[i]=nums[len];
+    }
+    i=i-1;
+       }
+  }
+  return nums;
+}
+
+
+
+#
+Given a non-empty array of ints, return a new array containing the elements from the original array that come before the first 4 
+in the original array. The original array will contain at least one 4. 
+Note that it is valid in java to create an array of length 0.
+
+
+
+
+public int[] pre4(int[] nums) {
+ int n=0;
+ for(int i=0; i<nums.length-1; i++)
+ {
+   if(nums[i]!=4)
+   {
+     n++;
+
+   }else
+   break;
+ }
+ int[] arr=new int[n];
+   for(int i=0; i<n;i++)
+   {
+     arr[i]=nums[i];
+   }
+ 
+ return arr;
+}
